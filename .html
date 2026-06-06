@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Pronaturales Emmanuel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="icon" type="image/png" href="Icono-04.svg" >
+   <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #1e293b;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-dark: #21335D;
+            --primary-green: #95C11F;
+            --primary-orange: #F39325;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-green);
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 100px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--primary-dark);
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 0 0 5px;
+        }
+
+
+        .hero-badge {
+            background: #eef4e4;
+            display: inline-block;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #334155;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #d67d1a;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            width: 550px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 28px;
+            margin: 70px 0 60px;
+        }
+
+        .feature-card {
+            flex: 1;
+            min-width: 180px;
+            background: white;
+            padding: 28px 16px;
+            border-radius: 32px;
+            text-align: center;
+            border: 1px solid #e9edf2;
+        }
+
+        .feature-card i {
+            font-size: 2.4rem;
+            color: var(--primary-green);
+            margin-bottom: 18px;
+        }
+
+        .feature-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+
+        .section-title h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .section-title span {
+            background: var(--primary-green);
+            height: 4px;
+            width: 70px;
+            display: block;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 32px;
+            width: 300px;
+            overflow: hidden;
+            border: 1px solid #ffffff;
+        }
+
+        .product-img {
+        
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .product-img i {
+            font-size: 3.8rem;
+            color: var(--primary-green);
+        }
+
+        .product-badge {
+            background-color: #F39325;
+            color: white;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        .product-info {
+            padding: 20px 20px 24px;
+        }
+
+        .product-info h4 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .product-info p {
+            font-size: 0.85rem;
+            color: #475569;
+            margin: 8px 0;
+        }
+
+        .price {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--primary-orange);
+            margin: 10px 0;
+        }
+
+        .btn-small {
+            background: transparent;
+            border: 2px solid var(--primary-green);
+            padding: 8px 0;
+            width: 100%;
+            border-radius: 60px;
+            font-weight: 700;
+            color: var(--primary-green);
+            cursor: pointer;
+        }
+
+        .btn-small:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .nosotros-section {
+            background: #f1f5f9;
+            border-radius: 48px;
+            padding: 48px 40px;
+            margin: 60px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nosotros-text {
+            flex: 2;
+        }
+
+        .nosotros-text h3 {
+            font-size: 1.9rem;
+            color: var(--primary-dark);
+        }
+
+        .nosotros-icon {
+            flex: 1;
+            text-align: center;
+            font-size: 4rem;
+            color: var(--primary-green);
+        }
+
+        .contacto-area {
+            background: white;
+            border-radius: 48px;
+            padding: 40px 32px;
+            margin: 40px 0 60px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .contacto-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-btn {
+            background: #f1f5f9;
+            padding: 12px 24px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+
+        .btn-pdf-contact {
+            background-color: var(--primary-orange);
+            color: white !important;
+        }
+
+        .btn-pdf-contact:hover {
+            background-color: #d67d1a;
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            color: #eef2ff;
+            padding: 40px 0 24px;
+            border-radius: 32px 32px 0 0;
+            margin-top: 30px;
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-img {
+            height: auto;
+            width: 200px;;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-text h4 {
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            display: block;
+            margin-bottom: 8px;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #304e7a;
+            padding-top: 20px;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 780px) {
+            .header-flex {
+                flex-direction: column;
+            }
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo-area">
+            <img class="logo-img" src="LOGO PRO-02.png" alt="Pronaturales Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 60%27%3E%3Crect width=%27200%27 height=%2760%27 fill=%27%2321335D%27/%3E%3Ctext x=%2710%27 y=%2735%27 fill=%27%2395C11F%27 font-size=%2720%27%3EPronaturales%3C/text%3E%3C/svg%3E';">
+            <div class="logo-text">
+            
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <section id="inicio">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">🌿 Descubre el poder de lo natural</div>
+                    <h2>Bienestar<br> que nace de la naturaleza</h2>
+                    <p>Productos naturales seleccionados especialmente para mejorar tu salud y calidad de vida. Shitafactor, Deto'x orgánico y Colágeno Marino.</p>
+                    <a href="#productos" class="btn-primary">Ver productos <i class="fas fa-leaf"></i></a>
+                    <a class="contact-btn btn-pdf-contact" id="pdfManualContactBtn"><i class="fas fa-file-pdf"></i> Manual de uso mascota</a>
+                </div>
+                <div class="hero-image">
+                    <img src="HONGO4.svg" alt="Productos naturales">
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios">
+            <div class="features">
+                <div class="feature-card"><i class="fas fa-seedling"></i><h4>100% Naturales</h4><p>Ingredientes puros y de la mejor calidad.</p></div>
+                <div class="feature-card"><i class="fas fa-flask"></i><h4>Seguros y Efectivos</h4><p>Productos probados y con respaldo.</p></div>
+                <div class="feature-card"><i class="fas fa-heart"></i><h4>Hechos con Amor</h4><p>Elaborados con pasión para tu bienestar.</p></div>
+                <div class="feature-card"><i class="fas fa-truck"></i><h4>Envíos Rápidos</h4><p>Recibe tus productos hasta la puerta de tu casa.</p></div>
+            </div>
+        </section>
+
+        <section id="productos">
+    <div class="section-title">
+        <h3>🌟 Nuestros productos estrella 🌟</h3>
+        <span></span>
+    </div>
+    <div class="products-grid" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 32px;">
+        
+        <!-- Producto 1 -->
+        <div class="product-card" style="width: 280px; background: white; border-radius: 32px; overflow: hidden;">
+            <div class="product-img" style="text-align: center; padding: 20px;">
+                <img src="img222.png" alt="Shitafactor" style="width: 250px; height: auto; object-fit: cover; border-radius: 20px;">
+                
+            </div>
+            <div class="product-info" style="padding: 20px;">
+                <h4>Shitafactor</h4>
+                <p>Proteína de soya, suero, quinua y malta.</p>
+                <div class="price" style="color:#F39325; font-weight:800;">$35.000</div>
+                <button class="btn-small add-to-cart" style="background:transparent; border:2px solid #95C11F; padding:8px; width:100%; border-radius:60px;">Lo quiero</button>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card" style="width: 280px; background: white; border-radius: 32px; overflow: hidden;">
+            <div class="product-img" style="text-align: center; padding: 20px;">
+                <img src="img333.png" alt="Deto'x Orgánico" style="width: 250px; height: auto; object-fit: cover; border-radius: 20px;">
+               
+            </div>
+            <div class="product-info" style="padding: 20px;">
+                <h4>Deto'x Orgánico</h4>
+                <p>Limpieza de colon y mejora la digestión.</p>
+                <div class="price" style="color:#F39325; font-weight:800;">$50.000</div>
+                <button class="btn-small add-to-cart" style="background:transparent; border:2px solid #95C11F; padding:8px; width:100%; border-radius:60px;">Lo quiero</button>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card" style="width: 280px; background: white; border-radius: 32px; overflow: hidden;">
+            <div class="product-img" style="text-align: center; padding: 20px;">
+                <img src="img111.png" alt="Colágeno Marino" style="width: 250px; height: auto; object-fit: cover; border-radius: 20px;">
+                
+            </div>
+            <div class="product-info" style="padding: 20px;">
+                <h4>Colágeno Marino</h4>
+                <p>Para articulaciones, piel y cabello. Sabor identico a Arándanos</p>
+                <div class="price" style="color:#F39325; font-weight:800;">$45.000</div>
+                <button class="btn-small add-to-cart" style="background:transparent; border:2px solid #95C11F; padding:8px; width:100%; border-radius:60px;">Lo quiero</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        <!-- NOSOTROS -->
+        <section id="nosotros">
+            <div class="nosotros-section">
+                <div class="nosotros-text">
+                    <h3><i class="fas fa-hand-sparkles"></i> Nosotros · Pronaturales</h3>
+                    <br>
+                    <p>Somos una empresa comprometida con el bienestar integral, usando ingredientes funcionales de alta calidad. Nuestros productos Shitafactor, Deto'x orgánico y Colágeno Marino reflejan la armonía entre ciencia y naturaleza. Creemos en un estilo de vida saludable, accesible y transformador.</p>
+                    <p style="margin-top: 12px;">🌱 Hechos con amor y respeto por el medio ambiente. 🌱</p>
+                </div>
+                <div class="nosotros-icon">
+                    <i class="fas fa-leaf"></i><br>
+                    <i class="fas fa-seedling"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="contacto-area">
+                <h3>📞 Contáctanos</h3>
+                <p>¿Dudas o pedidos? Escríbenos, te asesoramos con gusto.</p>
+                <div class="contacto-buttons">
+                    <a class="contact-btn" id="whatsappBtn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a class="contact-btn" id="emailBtn"><i class="far fa-envelope"></i> hola@pronaturales.com</a>
+                    <a class="contact-btn" id="phoneBtn"><i class="fas fa-phone-alt"></i> +57 313 363 1604 <i class="fas fa-mushroom"></i></a>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-flex">
+            <div class="footer-logo">
+                <img class="footer-logo-img" src="LOGO PRO-02.png" alt="Pronaturales Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 60%27%3E%3Crect width=%27200%27 height=%2760%27 fill=%27%23ffffff%27/%3E%3Ctext x=%2710%27 y=%2735%27 fill=%27%2321335D%27 font-size=%2720%27%3EPronaturales%3C/text%3E%3C/svg%3E';">
+                <div class="footer-text"></div>
+            </div>
+            <div class="footer-links">
+                <div><a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#beneficios">Beneficios</a></div>
+                <div><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></div>
+            </div>
+        </div>
+        <div class="copyright">© 2025 Pronaturales - Emmanuel. Cuidando tu salud con productos naturales de excelencia.</div>
+    </div>
+</footer>
+
+<script>
+    // FUNCIÓN PARA ABRIR EL PDF CORRECTAMENTE
+    function abrirManualMascota() {
+        // Este es el nombre EXACTO de tu archivo PDF
+        var pdfUrl = "manual_mascota.pdf.pdf";
+        
+        // Intentar abrir el PDF
+        window.open(pdfUrl, '_blank');
+        
+        // Mensaje de ayuda en consola
+        console.log("Intentando abrir: " + pdfUrl);
+        console.log("Asegúrate de que el archivo esté en: " + window.location.href.replace(/[^/]*$/, "") + pdfUrl);
+    }
+
+    // Botón PDF en contacto
+    var pdfBtn = document.getElementById('pdfManualContactBtn');
+    if(pdfBtn) {
+        pdfBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            abrirManualMascota();
+        });
+    }
+
+    // Navegación suave
+    document.querySelectorAll('.nav-links a[href^="#"], .footer-links a[href^="#"], .btn-primary[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            var targetId = this.getAttribute('href');
+            if(targetId && targetId !== '#') {
+                var targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+
+    // Botón Ver productos
+    var verProductos = document.querySelector('.btn-primary');
+    if(verProductos) {
+        verProductos.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // Botones "Lo quiero"
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var nombre = this.closest('.product-card')?.querySelector('h4')?.innerText || 'Producto';
+            alert('✨ Añadiste ' + nombre + ' a tu carrito. ✨');
+        });
+    });
+
+    // Contacto
+    document.getElementById('whatsappBtn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('📱 WhatsApp: +57 133631604');
+    });
+    document.getElementById('emailBtn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('📧 hola@pronaturales.com');
+    });
+    document.getElementById('phoneBtn')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('📞 +57 313 363 1604');
+    });
+</script>
+
+</body>
+</html>
